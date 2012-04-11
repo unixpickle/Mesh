@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0C09851534B8BE00B9BAC6 /* ANMeshGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C09841534B8BE00B9BAC6 /* ANMeshGrid.m */; };
 		FA40CBA11533950D0008A9E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA40CBA01533950D0008A9E6 /* UIKit.framework */; };
 		FA40CBA31533950D0008A9E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA40CBA21533950D0008A9E6 /* Foundation.framework */; };
 		FA40CBA51533950D0008A9E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA40CBA41533950D0008A9E6 /* CoreGraphics.framework */; };
@@ -15,22 +16,36 @@
 		FA40CBB11533950D0008A9E6 /* ANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40CBB01533950D0008A9E6 /* ANAppDelegate.m */; };
 		FA40CBB41533950D0008A9E6 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40CBB31533950D0008A9E6 /* ANViewController.m */; };
 		FA40CBB71533950D0008A9E6 /* ANViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA40CBB51533950D0008A9E6 /* ANViewController.xib */; };
+		FA40CBBF153395270008A9E6 /* ANMeshNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40CBBE153395270008A9E6 /* ANMeshNode.m */; };
+		FA40CBC2153395430008A9E6 /* ANMeshBand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40CBC1153395430008A9E6 /* ANMeshBand.m */; };
+		FA40CBC91534F60A0008A9E6 /* ANMeshGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40CBC81534F60A0008A9E6 /* ANMeshGridView.m */; };
+		FA40CBCD1535004D0008A9E6 /* ANMeshDragContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40CBCC1535004D0008A9E6 /* ANMeshDragContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E0C09831534B8BE00B9BAC6 /* ANMeshGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMeshGrid.h; sourceTree = "<group>"; };
+		2E0C09841534B8BE00B9BAC6 /* ANMeshGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMeshGrid.m; sourceTree = "<group>"; };
 		FA40CB9C1533950D0008A9E6 /* Mesh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mesh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA40CBA01533950D0008A9E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA40CBA21533950D0008A9E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA40CBA41533950D0008A9E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FA40CBA81533950D0008A9E6 /* Mesh-Info.plist */ = {isa = PBXFileReference; path = "Mesh-Info.plist"; sourceTree = "<group>"; };
+		FA40CBA81533950D0008A9E6 /* Mesh-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mesh-Info.plist"; sourceTree = "<group>"; };
 		FA40CBAA1533950D0008A9E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA40CBAC1533950D0008A9E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA40CBAE1533950D0008A9E6 /* Mesh-Prefix.pch */ = {isa = PBXFileReference; path = "Mesh-Prefix.pch"; sourceTree = "<group>"; };
-		FA40CBAF1533950D0008A9E6 /* ANAppDelegate.h */ = {isa = PBXFileReference; path = ANAppDelegate.h; sourceTree = "<group>"; };
+		FA40CBAE1533950D0008A9E6 /* Mesh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mesh-Prefix.pch"; sourceTree = "<group>"; };
+		FA40CBAF1533950D0008A9E6 /* ANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANAppDelegate.h; sourceTree = "<group>"; };
 		FA40CBB01533950D0008A9E6 /* ANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANAppDelegate.m; sourceTree = "<group>"; };
-		FA40CBB21533950D0008A9E6 /* ANViewController.h */ = {isa = PBXFileReference; path = ANViewController.h; sourceTree = "<group>"; };
+		FA40CBB21533950D0008A9E6 /* ANViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		FA40CBB31533950D0008A9E6 /* ANViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		FA40CBB61533950D0008A9E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ANViewController.xib; sourceTree = "<group>"; };
+		FA40CBBD153395270008A9E6 /* ANMeshNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMeshNode.h; sourceTree = "<group>"; };
+		FA40CBBE153395270008A9E6 /* ANMeshNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMeshNode.m; sourceTree = "<group>"; };
+		FA40CBC0153395430008A9E6 /* ANMeshBand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMeshBand.h; sourceTree = "<group>"; };
+		FA40CBC1153395430008A9E6 /* ANMeshBand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMeshBand.m; sourceTree = "<group>"; };
+		FA40CBC71534F60A0008A9E6 /* ANMeshGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMeshGridView.h; sourceTree = "<group>"; };
+		FA40CBC81534F60A0008A9E6 /* ANMeshGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMeshGridView.m; sourceTree = "<group>"; };
+		FA40CBCB1535004D0008A9E6 /* ANMeshDragContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMeshDragContext.h; sourceTree = "<group>"; };
+		FA40CBCC1535004D0008A9E6 /* ANMeshDragContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMeshDragContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +98,16 @@
 				FA40CBB31533950D0008A9E6 /* ANViewController.m */,
 				FA40CBB51533950D0008A9E6 /* ANViewController.xib */,
 				FA40CBA71533950D0008A9E6 /* Supporting Files */,
+				FA40CBBD153395270008A9E6 /* ANMeshNode.h */,
+				FA40CBBE153395270008A9E6 /* ANMeshNode.m */,
+				FA40CBC0153395430008A9E6 /* ANMeshBand.h */,
+				FA40CBC1153395430008A9E6 /* ANMeshBand.m */,
+				2E0C09831534B8BE00B9BAC6 /* ANMeshGrid.h */,
+				2E0C09841534B8BE00B9BAC6 /* ANMeshGrid.m */,
+				FA40CBC71534F60A0008A9E6 /* ANMeshGridView.h */,
+				FA40CBC81534F60A0008A9E6 /* ANMeshGridView.m */,
+				FA40CBCB1535004D0008A9E6 /* ANMeshDragContext.h */,
+				FA40CBCC1535004D0008A9E6 /* ANMeshDragContext.m */,
 			);
 			path = Mesh;
 			sourceTree = "<group>";
@@ -164,6 +189,11 @@
 				FA40CBAD1533950D0008A9E6 /* main.m in Sources */,
 				FA40CBB11533950D0008A9E6 /* ANAppDelegate.m in Sources */,
 				FA40CBB41533950D0008A9E6 /* ANViewController.m in Sources */,
+				FA40CBBF153395270008A9E6 /* ANMeshNode.m in Sources */,
+				FA40CBC2153395430008A9E6 /* ANMeshBand.m in Sources */,
+				2E0C09851534B8BE00B9BAC6 /* ANMeshGrid.m in Sources */,
+				FA40CBC91534F60A0008A9E6 /* ANMeshGridView.m in Sources */,
+				FA40CBCD1535004D0008A9E6 /* ANMeshDragContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +305,7 @@
 				FA40CBBC1533950D0008A9E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

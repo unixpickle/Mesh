@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ANMeshGridView.h"
 
-@interface ANViewController : UIViewController
+@interface ANViewController : UIViewController {
+    ANMeshGridView * grid;
+    UISlider * forceSlider;
+}
+
+- (void)forceChanged:(id)sender;
 
 @end
