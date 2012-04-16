@@ -29,7 +29,11 @@ static CGFloat CGPointDistance(CGPoint p1, CGPoint p2);
 }
 
 - (void)setFriction:(CGFloat)force {
-    meshGrid.friction = ANMeshVectorMake(force, force);
+    meshGrid.friction = force;
+}
+
+- (void)setDrag:(CGFloat)coefficient {
+    meshGrid.drag = coefficient;
 }
 
 - (void)startAnimation {

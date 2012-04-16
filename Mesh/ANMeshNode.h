@@ -16,6 +16,9 @@ typedef struct {
 ANMeshVector ANMeshVectorMake(CGFloat x, CGFloat y);
 ANMeshVector ANMeshVectorMakeAngle(CGFloat mag, CGFloat angle);
 ANMeshVector ANMeshVectorAdd(ANMeshVector v1, ANMeshVector v2);
+CGFloat ANMeshVectorGetAngle(ANMeshVector v1);
+CGFloat ANMeshVectorGetMagnitude(ANMeshVector v1);
+ANMeshVector ANMeshVectorApplyOpposingForce(ANMeshVector v1, ANMeshVector v2, NSTimeInterval time);
 
 @interface ANMeshNode : NSObject {
     CGPoint location;
@@ -32,7 +35,7 @@ ANMeshVector ANMeshVectorAdd(ANMeshVector v1, ANMeshVector v2);
 - (void)addBand:(ANMeshBand *)aBand;
 
 - (ANMeshVector)netForceVector;
-- (void)accelerateWithTime:(NSTimeInterval)passed friction:(ANMeshVector)coeff;
+- (void)accelerateWithTime:(NSTimeInterval)passed friction:(CGFloat)coeff drag:(CGFloat)drag;
 - (void)moveWithTime:(NSTimeInterval)passed;
 
 @end

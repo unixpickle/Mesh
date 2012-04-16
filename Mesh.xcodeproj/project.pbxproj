@@ -267,10 +267,12 @@
 		FA40CBBB1533950D0008A9E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charles Nichol (N2HK2M4K3L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mesh/Mesh-Prefix.pch";
 				INFOPLIST_FILE = "Mesh/Mesh-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F66072C4-E53D-4263-BBA6-72CF957142F3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -278,10 +280,12 @@
 		FA40CBBC1533950D0008A9E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charles Nichol (N2HK2M4K3L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mesh/Mesh-Prefix.pch";
 				INFOPLIST_FILE = "Mesh/Mesh-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F66072C4-E53D-4263-BBA6-72CF957142F3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

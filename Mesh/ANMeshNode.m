@@ -29,6 +29,35 @@ ANMeshVector ANMeshVectorAdd(ANMeshVector v1, ANMeshVector v2) {
     return sum;
 }
 
+CGFloat ANMeshVectorGetAngle(ANMeshVector v1) {
+    return atan2(v1.y, v1.x);
+}
+
+CGFloat ANMeshVectorGetMagnitude(ANMeshVector v1) {
+    return sqrt(pow(v1.x, 2) + pow(v1.y, 2));
+}
+
+ANMeshVector ANMeshVectorApplyOpposingForce(ANMeshVector v1, ANMeshVector v2, NSTimeInterval time) {
+    v2.x *= time;
+    v2.y *= time;
+    ANMeshVector newVec = v1;
+    if (newVec.x < 0) {
+        newVec.x += v2.x;
+        if (newVec.x > 0) newVec.x = 0;
+    } else if (newVec.x > 0) {
+        newVec.x += v2.x;
+        if (newVec.x < 0) newVec.x = 0;
+    }
+    if (newVec.y < 0) {
+        newVec.y += v2.y;
+        if (newVec.y > 0) newVec.y = 0;
+    } else if (newVec.y > 0) {
+        newVec.y += v2.y;
+        if (newVec.y < 0) newVec.y = 0;
+    }
+    return newVec;
+}
+
 @implementation ANMeshNode
 
 @synthesize location;
@@ -52,23 +81,20 @@ ANMeshVector ANMeshVectorAdd(ANMeshVector v1, ANMeshVector v2) {
     return vector;
 }
 
-- (void)accelerateWithTime:(NSTimeInterval)passed friction:(ANMeshVector)coeff {
+- (void)accelerateWithTime:(NSTimeInterval)passed friction:(CGFloat)coeff drag:(CGFloat)drag {
     if (fixed) return;
     
     ANMeshVector force = [self netForceVector];
     velocity.x += force.x * passed;
     velocity.y += force.y * passed;
     
-    if (velocity.x > 0) {
-        velocity.x = MAX(0, velocity.x - coeff.x);
-    } else {
-        velocity.x = MIN(0, velocity.x + coeff.x);
-    }
-    if (velocity.y > 0) {
-        velocity.y = MAX(0, velocity.y - coeff.y);
-    } else {
-        velocity.y = MIN(0, velocity.y + coeff.y);
-    }
+    CGFloat velMagnitude = ANMeshVectorGetMagnitude(velocity);
+    CGFloat velAngle = ANMeshVectorGetAngle(velocity);
+    ANMeshVector friction = ANMeshVectorMakeAngle(-coeff, velAngle);
+    ANMeshVector dragVector = ANMeshVectorMakeAngle(-drag * velMagnitude, velAngle);
+    
+    velocity = ANMeshVectorApplyOpposingForce(velocity, friction, passed);
+    velocity = ANMeshVectorApplyOpposingForce(velocity, dragVector, passed);
 }
 
 - (void)moveWithTime:(NSTimeInterval)passed {

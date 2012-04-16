@@ -23,5 +23,6 @@
 - (void)startAnimation;
 - (void)stopAnimation;
 - (void)setFriction:(CGFloat)force;
+- (void)setDrag:(CGFloat)coefficient;
 
 @end

@@ -17,13 +17,12 @@
 @implementation ANMeshGrid
 
 @synthesize friction;
+@synthesize drag;
 @synthesize nodes;
 @synthesize bands;
 
 - (id)initWithDimensions:(CGSize)size frame:(CGSize)scale {
-    if ((self = [super init])) {
-        friction = ANMeshVectorMake(0, 0);
-        
+    if ((self = [super init])) {        
         rows = (int)size.height;
         cols = (int)size.width;
         drawSize = scale;
@@ -58,7 +57,10 @@
 - (void)moveNodes:(NSTimeInterval)period {
     for (int i = 0; i < [nodes count]; i++) {
         ANMeshNode * node = [nodes objectAtIndex:i];
-        [node accelerateWithTime:period friction:friction];
+        [node accelerateWithTime:period friction:friction drag:drag];
+    }
+    for (int i = 0; i < [nodes count]; i++) {
+        ANMeshNode * node = [nodes objectAtIndex:i];
         [node moveWithTime:period];
     }
 }
@@ -81,7 +83,7 @@
         ANMeshNode * neighbor = [nodes objectAtIndex:[neighborIdx intValue]];
         NSSet * nodeSet = [NSSet setWithObjects:node, neighbor, nil];
         ANMeshBand * band = [[ANMeshBand alloc] initWithNodes:nodeSet
-                                               springConstant:1
+                                               springConstant:kANMeshGridSpringConstant
                                                          rest:spacingX];
         [node addBand:band];
         [neighbor addBand:band];

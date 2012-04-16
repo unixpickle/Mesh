@@ -12,8 +12,10 @@
 @interface ANViewController : UIViewController {
     ANMeshGridView * grid;
     UISlider * forceSlider;
+    UIButton * resetButton;
 }
 
 - (void)forceChanged:(id)sender;
+- (void)reset:(id)sender;
 
 @end

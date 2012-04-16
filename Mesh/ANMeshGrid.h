@@ -9,15 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "ANMeshNode.h"
 
+#define kANMeshGridSpringConstant 10
+
 @interface ANMeshGrid : NSObject {
     int rows, cols;
     CGSize drawSize;
     NSArray * nodes;
     NSArray * bands;
-    ANMeshVector friction;
+    CGFloat friction;
+	CGFloat drag;
 }
 
-@property (readwrite) ANMeshVector friction;
+@property (readwrite) CGFloat friction;
+@property (readwrite) CGFloat drag;
 @property (readonly) NSArray * nodes;
 @property (readonly) NSArray * bands;
 
